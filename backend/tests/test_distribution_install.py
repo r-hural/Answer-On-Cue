@@ -11,6 +11,7 @@ from distribution.package import build_package
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPTS = REPO_ROOT / "scripts"
+VERSION = (REPO_ROOT / "VERSION").read_text(encoding="utf-8").strip()
 
 
 @pytest.fixture(autouse=True)
@@ -88,22 +89,22 @@ def test_scripts_parse():
 
 def test_dry_run_from_local_source(env, release):
     code, output = powershell(release / "install.ps1", env)
-    assert "INSTALL DRY RUN OK 0.1.0" in output, output
+    assert f"INSTALL DRY RUN OK {VERSION}" in output, output
     root = Path(env["AOC_INSTALL_ROOT"])
-    assert (root / "app" / "0.1.0" / "backend" / "app" / "main.py").is_file()
-    assert not (root / "app" / "0.1.0" / ".complete").exists()
-    assert not (root / "app" / "0.1.0.partial").exists()
+    assert (root / "app" / VERSION / "backend" / "app" / "main.py").is_file()
+    assert not (root / "app" / VERSION / ".complete").exists()
+    assert not (root / "app" / f"{VERSION}.partial").exists()
     assert "python install 3.13" in output and "pip install --python" in output
     assert not (root / "uv").exists()
 
 
 def test_dry_run_bad_checksum(env, release):
-    sha = release / "answeroncue-0.1.0.zip.sha256"
-    sha.write_text("0" * 64 + "  answeroncue-0.1.0.zip\n", encoding="ascii")
+    sha = release / f"answeroncue-{VERSION}.zip.sha256"
+    sha.write_text("0" * 64 + f"  answeroncue-{VERSION}.zip\n", encoding="ascii")
     code, output = powershell(release / "install.ps1", env)
     assert "INSTALL FAILED" in output and "checksum mismatch" in output, output
     assert "INSTALL DRY RUN OK" not in output
-    assert not (Path(env["AOC_INSTALL_ROOT"]) / "app" / "0.1.0").exists()
+    assert not (Path(env["AOC_INSTALL_ROOT"]) / "app" / VERSION).exists()
 
 
 def test_dry_run_picks_newest_local_version(env, release, dist):
@@ -172,7 +173,7 @@ def test_real_install(tmp_path, release):
         "AOC_UPDATE": "",
     }
     code, output = powershell(release / "install.ps1", env, timeout=1800)
-    assert "INSTALL OK 0.1.0" in output, output
+    assert f"INSTALL OK {VERSION}" in output, output
     state = json.loads((root / "data" / "launcher.json").read_text(encoding="utf-8"))
     url = f"http://127.0.0.1:{state['port']}/api/health"
     health = None

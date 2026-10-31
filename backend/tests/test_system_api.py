@@ -16,6 +16,7 @@ from app.features.jobs.models import AiJob
 from app.features.library.models import Subject
 from app.features.system import router as system_router
 from app.features.system import service
+from app.features.system.version import app_version
 from app.main import create_app
 
 BACKEND = Path(__file__).resolve().parents[1]
@@ -89,7 +90,7 @@ def test_info_not_installed_makes_no_request(api, monkeypatch):
     assert data["installed"] is False
     assert data["latest"] is None and data["update_available"] is False
     assert data["check_message"] == "Updates only work in the installed version."
-    assert data["version"] == "0.1.0"
+    assert data["version"] == app_version()
     assert data["running_jobs"] == 0 and data["last_update"] is None
 
 

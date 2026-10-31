@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- The repository's secret scan no longer reports the made-up keys used in the tests.
+
 ## 0.1.0 (first public release)
 
 - Study materials: upload PDF, DOCX, TXT or Markdown files into subjects, group books into

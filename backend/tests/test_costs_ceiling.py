@@ -232,7 +232,8 @@ def test_in_flight_reservations_count(url, monkeypatch):
     monkeypatch.setattr(estimates, "text_call_usd", lambda *args: 0.06)
     fake = PaidTextGenerator({"t": Out(x=1)}, input_tokens=30_000, output_tokens=0)
     fake.gate = threading.Event()
-    guard = fixed_guard(url, 0.10)
+    # The real call stamps its usage with the real clock, so the guard reads the same clock.
+    guard = SpendingGuard(url, 0.10, tz=ZONE)
 
     def generator():
         return RecordingTextGenerator(

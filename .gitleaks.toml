@@ -1,0 +1,18 @@
+# gitleaks rules for this repository's CI: the default rules, plus the fake keys in the tests.
+title = "AnswerOnCue gitleaks config"
+
+[extend]
+useDefault = true
+
+# Made-up keys in tests that check keys are masked, never exported and never backed up.
+[[allowlists]]
+description = "fake keys in tests"
+regexTarget = "secret"
+regexes = [
+  '''^sk-test-SECRET-0123456789$''',
+  '''^azkey0123456789abcdef0123456789ab$''',
+  '''^az-test-0123456789$''',
+]
+paths = ['''^backend/tests/test_[a-z0-9_]+\.py$''']
+condition = "AND"
+targetRules = ["generic-api-key"]

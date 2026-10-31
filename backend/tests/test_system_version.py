@@ -10,7 +10,7 @@ def test_version_file_is_semver():
 
 
 def test_app_version_reads_file():
-    assert app_version() == "0.1.0"
+    assert app_version() == (REPO_ROOT / "VERSION").read_text(encoding="utf-8").strip()
 
 
 def test_releases_repo_from_release_json(monkeypatch):
