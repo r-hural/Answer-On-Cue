@@ -1,0 +1,54 @@
+# Settings saved in the browser go to <data directory>/settings.env and take precedence over this file
+# Copy this file to backend/.env and fill it in; never commit .env
+# Data directory (default: data/ in the repository root)
+AOC_DATA_DIR=
+# Database URL (default: SQLite in the data directory)
+AOC_DATABASE_URL=
+# Address the server listens on (local only)
+AOC_HOST=127.0.0.1
+# Server port
+AOC_PORT=8000
+# OpenAI API key
+AOC_OPENAI_API_KEY=
+# Anthropic API key
+AOC_ANTHROPIC_API_KEY=
+# Azure Speech key
+AOC_AZURE_SPEECH_KEY=
+# Azure Speech region
+AOC_AZURE_SPEECH_REGION=
+# Speech-to-text transcription provider (currently only: openai)
+AOC_TRANSCRIPTION_PROVIDER=openai
+# Transcription model
+AOC_TRANSCRIPTION_MODEL=gpt-transcribe
+# Content generation provider (openai or anthropic)
+AOC_GENERATION_PROVIDER=openai
+# Content generation model
+AOC_GENERATION_MODEL=gpt-6.1-sol
+# Answer assessment provider (openai or anthropic)
+AOC_ASSESSMENT_PROVIDER=openai
+# Answer assessment model
+AOC_ASSESSMENT_MODEL=gpt-6.1-sol
+# Anthropic model used when a role selects anthropic and its model is still the default OpenAI model
+AOC_ANTHROPIC_DEFAULT_MODEL=claude-sonnet-5-5
+# Whether Anthropic may switch to a fallback model on the server side (true/false)
+AOC_ANTHROPIC_FALLBACKS=true
+# Voice engine that reads the questions aloud (piper, azure_speech, openai or browser)
+AOC_VOICE_PROVIDER=piper
+# Voice: a Piper voice id (e.g. pl_PL-bass-high) or an Azure voice name (e.g. pl-PL-ZofiaNeural) or an OpenAI voice, e.g. marin
+AOC_VOICE_NAME=pl_PL-bass-high
+# Speech rate (0.5 to 1.5)
+AOC_VOICE_RATE=1.0
+# Azure voice used when azure_speech is selected and AOC_VOICE_NAME is a Piper voice
+AOC_AZURE_VOICE_DEFAULT=pl-PL-ZofiaNeural
+# OpenAI Realtime model that reads questions aloud for the openai voice engine (uses AOC_OPENAI_API_KEY)
+AOC_OPENAI_VOICE_MODEL=gpt-realtime-2.1-mini
+# OpenAI voice used when openai is selected and AOC_VOICE_NAME is not an OpenAI voice
+AOC_OPENAI_VOICE_DEFAULT=marin
+# Directory of Piper voice models (default: data/voices)
+AOC_VOICES_DIR=
+# Weights of the content assessment: correctness and completeness in percent, e.g. [30,50] (sum 80, language 20). Empty = 30/50
+AOC_FACTUAL_WEIGHTS=
+# Defaults for new rounds: main questions (1-30), preparation seconds (0-600), answer seconds (5-600)
+AOC_ROUND_QUESTION_COUNT=10
+AOC_ROUND_PREP_SECONDS=30
+AOC_ROUND_ANSWER_SECONDS=120

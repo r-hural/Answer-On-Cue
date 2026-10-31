@@ -1,0 +1,15 @@
+Polityka źródeł: Tylko poszerzenie
+<topic>Demokracja ateńska</topic>
+<topic>Instytucje i procedury ustroju Aten w epoce klasycznej.</topic>
+Cele nauczania:
+<objective index="0">Wyjaśnić rolę eklezji w ustroju Aten.</objective>
+<objective index="1">Omówić reformy Klejstenesa.</objective>
+Fragmenty źródłowe:
+<passage id="101">Demokracja ateńska rozwinęła się w V wieku p.n.e. Głównym organem była eklezja, w której zasiadali pełnoprawni obywatele.</passage>
+<passage id="102">Reformy Klejstenesa z 508 roku p.n.e. podzieliły obywateli na dziesięć fyl. Każda fyla wybierała pięćdziesięciu członków Rady Pięciuset.</passage>
+<passage id="103">Ostracyzm pozwalał wygnać z miasta obywatela uznanego za groźnego dla ustroju. Głosowano, pisząc imię na skorupie.</passage>
+Istniejące pytania (nie powtarzaj ich ani nie parafrazuj):
+<existing_question>Czym była Rada Pięciuset?</existing_question>
+Liczba pytań do napisania: 2
+Pytanie 1: styl=short, trudność=recall
+Pytanie 2: styl=open, trudność=analysis

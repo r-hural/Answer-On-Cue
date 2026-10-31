@@ -1,0 +1,11 @@
+{
+  "id": "hist-conflict",
+  "question_version_id": 9502,
+  "transcript": "Ostracyzm polegał na tym, że Ateńczycy pisali na skorupach imię polityka, a ten musiał wyjechać z miasta na dziesięć lat. Wprowadził go Klejstenes pod koniec szóstego wieku przed naszą erą, żeby chronić demokrację przed tyranią.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed",
+    "min_disputed_points": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "hist-misheard",
+  "question_version_id": 9004,
+  "transcript": "Konstytucja zniosła liberum wetto, ponieważ ta zasada pozwalała jednemu posłowi zerwać cały sejm i unieważnić wszystkie uchwały. Przez to państwo było sparaliżowane, a Rosja i Prusy przekupywały posłów, żeby blokować reformy.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed",
+    "min_transcription_doubts": 1,
+    "no_major_mistake_quoting": "wetto"
+  }
+}

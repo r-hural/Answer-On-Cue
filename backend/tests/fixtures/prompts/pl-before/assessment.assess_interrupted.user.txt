@@ -1,0 +1,29 @@
+<question style="open" difficulty="analysis" source_policy="materials">Omów rolę eklezji i reform Klejstenesa w demokracji ateńskiej.</question>
+Kryteria oceny (major_error_rules są numerowane od 0):
+<rubric>{"essential_points":[{"id":"p1","text":"Eklezja była głównym organem władzy.","weight":0.6,"alternatives":["eklezja jako główny organ"],"passage_ids":[101],"basis":"source"},{"id":"p2","text":"Klejstenes podzielił obywateli na dziesięć fyl.","weight":0.4,"alternatives":[],"passage_ids":[102],"basis":"expanded"}],"enrichment_points":[{"text":"Perykles wprowadził diety dla sędziów.","passage_ids":[103]}],"misconceptions":["Wszyscy mieszkańcy Aten mieli prawa polityczne."],"major_error_rules":["Reformy Klejstenesa przypisane Solonowi."],"model_answer":"Eklezja była głównym organem demokracji ateńskiej, a reformy Klejstenesa z 508 roku p.n.e. podzieliły obywateli na dziesięć fyl.","expanded_explanation":null,"beyond_material":["Eklezja zbierała się kilkadziesiąt razy w roku."],"source_issues":[]}</rubric>
+Fragmenty źródłowe:
+<passage id="101" locator="s. 1">Demokracja ateńska rozwinęła się w V wieku p.n.e. Głównym organem była eklezja, w której zasiadali pełnoprawni obywatele.</passage>
+<passage id="102" locator="s. 2">Reformy Klejstenesa z 508 roku p.n.e. podzieliły obywateli na dziesięć fyl. Każda fyla wybierała pięćdziesięciu członków Rady Pięciuset.</passage>
+<passage id="103" locator="s. 3">Ostracyzm pozwalał wygnać z miasta obywatela uznanego za groźnego dla ustroju. Głosowano, pisząc imię na skorupie.</passage>
+<attempt kind="retry" interrupted="true"/>
+Zmierzone dane o wypowiedzi:
+<delivery>
+- czas przygotowania: 4000 ms
+- opóźnienie rozpoczęcia mowy: 1200 ms
+- całkowite opóźnienie odpowiedzi: 5200 ms
+- czas odpowiedzi: 60000 ms
+- czas mowy: 48000 ms
+- udział ciszy wewnętrznej: 0.15
+- najdłuższa pauza wewnętrzna: 2700 ms
+- długie pauzy: 1
+- bardzo długie pauzy: 0
+- długie pauzy na minutę: 1
+- tempo: 130 słów/min
+- wtrącenia (wypełniacze): 3 (dolna granica: rozpoznawanie mowy może pomijać wtrącenia)
+- przykłady wtrąceń: yyy, jakby
+- zmierzone pauzy: 4200–6900 ms (long)
+- odpowiedź przerwana: tak
+- wartości przybliżone (detektor mowy)
+</delivery>
+Transkrypcja odpowiedzi:
+<transcript>Eklezja była główną instytucją Aten, a Klejstenes podzielił obywateli na dziesięć fyl w 510 roku.</transcript>

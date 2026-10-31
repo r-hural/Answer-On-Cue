@@ -1,0 +1,13 @@
+{
+  "id": "hist-expanded",
+  "question_version_id": 9501,
+  "transcript": "Ostracyzm to było ateńskie głosowanie, w którym obywatele pisali imię polityka na skorupach, czyli ostrakonach. Ten, kto dostał najwięcej głosów, musiał opuścić Ateny na dziesięć lat, ale zachowywał majątek. W piątym wieku przed naszą erą wygnano tak na przykład Arystydesa, zwanego Sprawiedliwym, a także Temistoklesa. Ostatni znany ostracyzm dotyczył Hyperbolosa około czterysta siedemnastego roku i potem przestano tej procedury używać.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed",
+    "bands": ["good", "very_good"],
+    "max_factual_mistakes": 0,
+    "no_mistake_on_points": ["p1", "p2"]
+  }
+}

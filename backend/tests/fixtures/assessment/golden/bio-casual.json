@@ -1,0 +1,22 @@
+{
+  "id": "bio-casual",
+  "question_version_id": 9001,
+  "transcript": "No więc fotosynteza to jest jakby taki proces, że rośliny, wiesz, robią sobie glukozę z dwutlenku węgla i wody. No i w sumie energię do tego biorą ze światła, które łapie ten chlorofil. Dzieje się to w chloroplastach. A tlen to jakby wychodzi przy okazji, w sumie roślina go wypuszcza do powietrza.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed",
+    "min_issues_any": {
+      "dimensions": [
+        "formality",
+        "precision"
+      ],
+      "count": 1
+    },
+    "pair": {
+      "with": "bio-formal",
+      "factual_within": 10,
+      "language_lower": true
+    }
+  }
+}

@@ -1,0 +1,4 @@
+piper-tts>=1.3
+# OpenAI Realtime voice: the GA client.realtime API (response.output_audio.* events) and its transport
+openai>=3.35
+websockets>=13,<19

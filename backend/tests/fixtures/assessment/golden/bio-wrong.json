@@ -1,0 +1,21 @@
+{
+  "id": "bio-wrong",
+  "question_version_id": 9001,
+  "transcript": "Fotosynteza to proces, w którym roślina pobiera z powietrza tlen i wodę, a wydziela dwutlenek węgla. Dzięki światłu słonecznemu powstaje w liściach glukoza. Wszystko to zachodzi w chloroplastach.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed",
+    "bands": [
+      "weak",
+      "needs_improvement"
+    ],
+    "min_factual_mistakes": 1,
+    "mistake_keywords": [
+      "dwutlenek węgla",
+      "dwutlenku węgla",
+      "CO2",
+      "CO₂"
+    ]
+  }
+}

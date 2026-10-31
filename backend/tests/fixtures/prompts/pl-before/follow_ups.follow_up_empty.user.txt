@@ -1,0 +1,12 @@
+<question>Omów rolę eklezji i reform Klejstenesa w demokracji ateńskiej.</question>
+Kryteria oceny pytania głównego:
+<rubric>{"essential_points":[{"id":"p1","text":"Eklezja była głównym organem władzy.","weight":0.6,"alternatives":["eklezja jako główny organ"],"passage_ids":[101],"basis":"source"},{"id":"p2","text":"Klejstenes podzielił obywateli na dziesięć fyl.","weight":0.4,"alternatives":[],"passage_ids":[102],"basis":"expanded"}],"enrichment_points":[{"text":"Perykles wprowadził diety dla sędziów.","passage_ids":[103]}],"misconceptions":["Wszyscy mieszkańcy Aten mieli prawa polityczne."],"major_error_rules":["Reformy Klejstenesa przypisane Solonowi."],"model_answer":"Eklezja była głównym organem demokracji ateńskiej, a reformy Klejstenesa z 508 roku p.n.e. podzieliły obywateli na dziesięć fyl.","expanded_explanation":null,"beyond_material":["Eklezja zbierała się kilkadziesiąt razy w roku."],"source_issues":[]}</rubric>
+Fragmenty źródłowe:
+(brak)
+Odpowiedź ucznia (transkrypcja):
+<transcript>Eklezja była główną instytucją Aten, a Klejstenes podzielił obywateli na dziesięć fyl w 510 roku.</transcript>
+Ocena punktów kluczowych:
+(brak)
+Błędy merytoryczne:
+(brak)
+Zadaj jedno pytanie dodatkowe.

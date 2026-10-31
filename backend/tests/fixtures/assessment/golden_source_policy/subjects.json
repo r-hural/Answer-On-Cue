@@ -1,0 +1,130 @@
+{
+  "subjects": [
+    {
+      "name": "Historia — ostracyzm w Atenach",
+      "passages": [
+        {
+          "id": 9601,
+          "locator": "s. 21",
+          "heading": "Procedura ostracyzmu",
+          "text": "Ostracyzm był ateńską procedurą, w której zgromadzenie ludowe raz w roku decydowało, czy go przeprowadzić. Jeśli tak, obywatele zbierali się na agorze i pisali imię polityka na skorupach glinianych naczyń, zwanych ostrakonami. Polityk, którego imię pojawiło się na największej liczbie skorup, przy ważności głosowania wymagającej co najmniej sześciu tysięcy głosów, musiał opuścić Ateny na dziesięć lat. Wygnany zachowywał majątek i prawa obywatelskie, a po powrocie mógł znów uczestniczyć w życiu politycznym. Ostracyzm nie był karą za przestępstwo, lecz środkiem ochrony demokracji przed politykami zbyt wpływowymi, którzy mogliby sięgnąć po władzę tyrańską."
+        },
+        {
+          "id": 9602,
+          "locator": "s. 22",
+          "heading": "Początki ostracyzmu",
+          "text": "Według Arystotelesa ostracyzm wprowadził Klejstenes w ramach swoich reform około 508 roku p.n.e. Miał on chronić nowy ustrój przed powrotem tyranii Pizystratydów."
+        },
+        {
+          "id": 9603,
+          "locator": "s. 23",
+          "heading": "Pierwsze użycie",
+          "text": "Ostracyzm wprowadzono dopiero w 487 roku p.n.e., po bitwie pod Maratonem, a jego pierwszą ofiarą był Hipparch, syn Charmosa, krewny dawnych tyranów. Wcześniej, za czasów Klejstenesa, takiej procedury w Atenach nie było."
+        }
+      ],
+      "questions": [
+        {
+          "version_id": 9501,
+          "family_id": 9501,
+          "version": 1,
+          "text": "Wyjaśnij, czym był ostracyzm w Atenach i jaki był jego los w V wieku p.n.e.",
+          "style": "open",
+          "difficulty": "recall",
+          "primary_topic_id": null,
+          "objective_id": null,
+          "status": "active",
+          "suggested_prep_s": 30,
+          "suggested_answer_s": 120,
+          "source_policy": "expanded",
+          "rubric": {
+            "essential_points": [
+              {
+                "id": "p1",
+                "text": "Głosowanie na skorupach (ostrakonach), w wyniku którego polityk musiał opuścić Ateny na dziesięć lat, zachowując majątek.",
+                "weight": 0.6,
+                "alternatives": ["wygnanie na dziesięć lat", "głosowanie skorupkowe"],
+                "passage_ids": [9601],
+                "basis": "source"
+              },
+              {
+                "id": "p2",
+                "text": "Ostracyzm stosowano w V wieku p.n.e. wobec znanych polityków (np. Arystydesa, Temistoklesa); ostatni znany przypadek dotyczył Hyperbolosa około 417 roku p.n.e., potem instytucja wyszła z użycia.",
+                "weight": 0.4,
+                "alternatives": ["ostatni ostracyzm Hyperbolosa", "zanik ostracyzmu"],
+                "passage_ids": [],
+                "basis": "expanded"
+              }
+            ],
+            "enrichment_points": [
+              {
+                "text": "Cel: ochrona demokracji przed tyranią.",
+                "passage_ids": [9601]
+              }
+            ],
+            "misconceptions": [
+              "Ostracyzm był karą za przestępstwo.",
+              "Wygnany tracił majątek."
+            ],
+            "major_error_rules": [
+              "Stwierdzenie, że ostracyzm był karą śmierci lub dożywotnim wygnaniem."
+            ],
+            "model_answer": "Ostracyzm był ateńskim głosowaniem na skorupach, po którym wskazany polityk musiał na dziesięć lat opuścić miasto, zachowując majątek. W V wieku p.n.e. wygnano w ten sposób między innymi Arystydesa i Temistoklesa, a ostatnim znanym przypadkiem był Hyperbolos około 417 roku p.n.e.; potem z procedury zrezygnowano.",
+            "expanded_explanation": null,
+            "beyond_material": [
+              "Przykłady wygnanych: Arystydes i Temistokles.",
+              "Ostatni znany ostracyzm: Hyperbolos około 417 roku p.n.e."
+            ],
+            "source_issues": []
+          }
+        },
+        {
+          "version_id": 9502,
+          "family_id": 9502,
+          "version": 1,
+          "text": "Na czym polegał ostracyzm i kiedy go wprowadzono w Atenach?",
+          "style": "open",
+          "difficulty": "recall",
+          "primary_topic_id": null,
+          "objective_id": null,
+          "status": "active",
+          "suggested_prep_s": 30,
+          "suggested_answer_s": 90,
+          "source_policy": "materials",
+          "rubric": {
+            "essential_points": [
+              {
+                "id": "p1",
+                "text": "Głosowanie na skorupach, po którym polityk musiał opuścić Ateny na dziesięć lat.",
+                "weight": 0.5,
+                "alternatives": ["wygnanie na dziesięć lat"],
+                "passage_ids": [9601],
+                "basis": "source"
+              },
+              {
+                "id": "p2",
+                "text": "Czas i autor wprowadzenia ostracyzmu.",
+                "weight": 0.5,
+                "alternatives": [],
+                "passage_ids": [9602],
+                "basis": "source"
+              }
+            ],
+            "enrichment_points": [],
+            "misconceptions": ["Ostracyzm był karą za przestępstwo."],
+            "major_error_rules": [],
+            "model_answer": "Ostracyzm był głosowaniem na skorupach, po którym wskazany polityk musiał na dziesięć lat opuścić Ateny. Źródła różnią się co do jego początków: według jednego wprowadził go Klejstenes około 508 roku p.n.e., według drugiego dopiero w 487 roku p.n.e.",
+            "expanded_explanation": null,
+            "beyond_material": [],
+            "source_issues": [
+              {
+                "kind": "contradiction",
+                "passage_ids": [9602, 9603],
+                "note": "Fragmenty podają różny czas wprowadzenia ostracyzmu: około 508 roku p.n.e. (Klejstenes) albo dopiero 487 roku p.n.e."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "subjects": [
+    {
+      "name": "Biologia — fotosynteza",
+      "passages": [
+        {
+          "id": 9101,
+          "locator": "s. 1",
+          "heading": "Istota fotosyntezy",
+          "text": "Fotosynteza jest procesem anabolicznym, w którym organizmy samożywne, przede wszystkim rośliny zielone, glony i sinice, wytwarzają związki organiczne z prostych związków nieorganicznych. Substratami fotosyntezy są dwutlenek węgla pobierany z powietrza przez aparaty szparkowe oraz woda pobierana z gleby przez korzenie. Źródłem energii dla tego procesu jest światło słoneczne. Produktami fotosyntezy są glukoza, czyli cukier prosty, oraz tlen, który jest uwalniany do atmosfery jako produkt uboczny. Sumaryczne równanie fotosyntezy można zapisać następująco: sześć cząsteczek dwutlenku węgla i sześć cząsteczek wody, w obecności światła i chlorofilu, daje jedną cząsteczkę glukozy i sześć cząsteczek tlenu. Fotosynteza jest więc podstawą istnienia niemal wszystkich łańcuchów pokarmowych na Ziemi."
+        },
+        {
+          "id": 9102,
+          "locator": "s. 2",
+          "heading": "Chloroplasty i chlorofil",
+          "text": "U roślin fotosynteza zachodzi w chloroplastach, czyli organellach komórkowych otoczonych dwiema błonami. Najwięcej chloroplastów znajduje się w komórkach miękiszu asymilacyjnego liści. Wewnątrz chloroplastu znajdują się spłaszczone pęcherzyki zwane tylakoidami, ułożone w stosy nazywane granami, oraz wypełniająca przestrzeń między nimi stroma. W błonach tylakoidów znajduje się zielony barwnik chlorofil, który pochłania światło, głównie czerwone i niebieskie, a odbija światło zielone. Dlatego liście mają zieloną barwę. Oprócz chlorofilu w chloroplastach występują barwniki pomocnicze, na przykład karotenoidy, które poszerzają zakres pochłanianego światła i chronią chlorofil przed nadmiarem energii."
+        },
+        {
+          "id": 9103,
+          "locator": "s. 3",
+          "heading": "Fazy fotosyntezy",
+          "text": "Fotosynteza przebiega w dwóch fazach. W fazie zależnej od światła, zachodzącej w błonach tylakoidów, energia światła pochłonięta przez chlorofil jest zamieniana na energię chemiczną zgromadzoną w ATP i NADPH. W tej fazie dochodzi również do rozkładu wody, czyli fotolizy, w wyniku której uwalniany jest tlen. Tlen wydzielany przez rośliny pochodzi zatem z wody, a nie z dwutlenku węgla. W fazie niezależnej od światła, zwanej cyklem Calvina, która zachodzi w stromie chloroplastu, energia zgromadzona w ATP i NADPH jest wykorzystywana do przyłączania dwutlenku węgla i wytworzenia cukrów. Obie fazy są ze sobą ściśle powiązane, a faza niezależna od światła zachodzi zazwyczaj w dzień, równocześnie z fazą zależną od światła."
+        },
+        {
+          "id": 9104,
+          "locator": "s. 4",
+          "heading": "Czynniki wpływające na fotosyntezę",
+          "text": "Intensywność fotosyntezy zależy od czynników zewnętrznych. Wraz ze wzrostem natężenia światła rośnie ona aż do osiągnięcia pewnego poziomu, powyżej którego dalsze zwiększanie natężenia nie przyspiesza procesu. Podobnie działa stężenie dwutlenku węgla w powietrzu. Temperatura wpływa na pracę enzymów: zbyt niska spowalnia fotosyntezę, a zbyt wysoka ją hamuje. Należy pamiętać, że fotosynteza i oddychanie komórkowe to dwa różne procesy. Rośliny oddychają przez całą dobę, pobierając tlen i wydzielając dwutlenek węgla, natomiast fotosynteza zachodzi tylko wtedy, gdy dostępne jest światło. W ciągu dnia fotosynteza zwykle przeważa nad oddychaniem, dlatego rośliny wydzielają więcej tlenu, niż go zużywają."
+        }
+      ],
+      "questions": [
+        {
+          "version_id": 9001,
+          "family_id": 9001,
+          "version": 1,
+          "text": "Wyjaśnij, na czym polega fotosynteza. Podaj jej substraty, produkty i miejsce zachodzenia.",
+          "style": "open",
+          "difficulty": "recall",
+          "primary_topic_id": null,
+          "objective_id": null,
+          "status": "approved",
+          "suggested_prep_s": 20,
+          "suggested_answer_s": 90,
+          "source_policy": "materials",
+          "rubric": {
+            "essential_points": [
+              {
+                "id": "p1",
+                "text": "Substratami fotosyntezy są dwutlenek węgla i woda.",
+                "weight": 0.25,
+                "alternatives": [
+                  "CO2 i H2O",
+                  "CO₂ i woda"
+                ],
+                "passage_ids": [
+                  9101
+                ]
+              },
+              {
+                "id": "p2",
+                "text": "Źródłem energii jest światło, pochłaniane przez chlorofil.",
+                "weight": 0.25,
+                "alternatives": [
+                  "energia świetlna",
+                  "energia słoneczna"
+                ],
+                "passage_ids": [
+                  9101,
+                  9102
+                ]
+              },
+              {
+                "id": "p3",
+                "text": "Produktami fotosyntezy są glukoza (cukier) i tlen.",
+                "weight": 0.25,
+                "alternatives": [
+                  "cukier i tlen",
+                  "węglowodany i tlen"
+                ],
+                "passage_ids": [
+                  9101
+                ]
+              },
+              {
+                "id": "p4",
+                "text": "U roślin fotosynteza zachodzi w chloroplastach.",
+                "weight": 0.25,
+                "alternatives": [
+                  "w chloroplastach komórek liści"
+                ],
+                "passage_ids": [
+                  9102
+                ]
+              }
+            ],
+            "enrichment_points": [
+              {
+                "text": "Dwie fazy: zależna od światła (błony tylakoidów) i niezależna od światła — cykl Calvina (stroma).",
+                "passage_ids": [
+                  9103
+                ]
+              },
+              {
+                "text": "Tlen pochodzi z rozkładu wody (fotolizy), a nie z dwutlenku węgla.",
+                "passage_ids": [
+                  9103
+                ]
+              },
+              {
+                "text": "Intensywność zależy od natężenia światła, stężenia CO2 i temperatury.",
+                "passage_ids": [
+                  9104
+                ]
+              }
+            ],
+            "misconceptions": [
+              "Rośliny w fotosyntezie pobierają tlen i wydzielają dwutlenek węgla.",
+              "Tlen wydzielany w fotosyntezie pochodzi z dwutlenku węgla.",
+              "Fotosynteza to to samo co oddychanie roślin."
+            ],
+            "major_error_rules": [
+              "Zamiana substratów z produktami: podanie tlenu jako substratu lub dwutlenku węgla jako produktu fotosyntezy.",
+              "Utożsamienie fotosyntezy z oddychaniem komórkowym."
+            ],
+            "model_answer": "Fotosynteza to proces, w którym rośliny wytwarzają związki organiczne z dwutlenku węgla i wody, wykorzystując energię światła pochłanianego przez chlorofil. Produktami są glukoza i tlen. U roślin proces zachodzi w chloroplastach.",
+            "expanded_explanation": "Fotosynteza ma fazę zależną od światła, w błonach tylakoidów, gdzie rozkład wody uwalnia tlen, oraz fazę niezależną od światła, czyli cykl Calvina w stromie, gdzie powstają cukry."
+          }
+        },
+        {
+          "version_id": 9002,
+          "family_id": 9002,
+          "version": 1,
+          "text": "Gdzie w komórce roślinnej zachodzi fotosynteza?",
+          "style": "short",
+          "difficulty": "recall",
+          "primary_topic_id": null,
+          "objective_id": null,
+          "status": "approved",
+          "suggested_prep_s": 5,
+          "suggested_answer_s": 30,
+          "source_policy": "materials",
+          "rubric": {
+            "essential_points": [
+              {
+                "id": "p1",
+                "text": "Fotosynteza zachodzi w chloroplastach.",
+                "weight": 0.7,
+                "alternatives": [],
+                "passage_ids": [
+                  9102
+                ]
+              },
+              {
+                "id": "p2",
+                "text": "Chlorofil, który pochłania światło, znajduje się w błonach tylakoidów chloroplastu.",
+                "weight": 0.3,
+                "alternatives": [
+                  "w tylakoidach"
+                ],
+                "passage_ids": [
+                  9102,
+                  9103
+                ]
+              }
+            ],
+            "enrichment_points": [
+              {
+                "text": "Cykl Calvina zachodzi w stromie chloroplastu.",
+                "passage_ids": [
+                  9103
+                ]
+              }
+            ],
+            "misconceptions": [
+              "Fotosynteza zachodzi w mitochondriach."
+            ],
+            "major_error_rules": [
+              "Wskazanie mitochondriów jako miejsca fotosyntezy."
+            ],
+            "model_answer": "Fotosynteza zachodzi w chloroplastach, a chlorofil znajduje się w błonach tylakoidów.",
+            "expanded_explanation": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Historia — Konstytucja 3 maja",
+      "passages": [
+        {
+          "id": 9201,
+          "locator": "s. 12",
+          "heading": "Uchwalenie Konstytucji",
+          "text": "Konstytucja 3 maja, czyli Ustawa Rządowa, została uchwalona 3 maja 1791 roku przez Sejm Czteroletni, zwany też Sejmem Wielkim, obradujący w latach 1788–1792. Większość historyków uznaje ją za pierwszą w Europie i drugą na świecie, po konstytucji Stanów Zjednoczonych z 1787 roku, nowoczesną spisaną konstytucję, choć część badaczy wskazuje na wcześniejsze akty, na przykład konstytucję Korsyki z 1755 roku. Jej autorami byli między innymi król Stanisław August Poniatowski, Ignacy Potocki i Hugo Kołłątaj. Uchwalenie ustawy odbyło się w pośpiechu, podczas nieobecności wielu posłów przeciwnych reformom. Konstytucja była próbą ratowania państwa osłabionego pierwszym rozbiorem z 1772 roku i wpływami Rosji."
+        },
+        {
+          "id": 9202,
+          "locator": "s. 13",
+          "heading": "Ustrój państwa",
+          "text": "Konstytucja wprowadziła zasadę trójpodziału władzy. Władzę ustawodawczą sprawował dwuizbowy sejm, złożony z izby poselskiej i senatu. Władzę wykonawczą powierzono królowi wraz z rządem zwanym Strażą Praw, w skład którego wchodzili prymas i ministrowie. Ministrowie odpowiadali przed sejmem za swoje działania. Władzę sądowniczą sprawowały niezawisłe sądy. Zniesiono wolną elekcję i wprowadzono monarchię dziedziczną: po śmierci Stanisława Augusta tron miał przypaść dynastii saskiej, czyli Wettinom. Miało to zakończyć okresy bezkrólewia, w czasie których obce dwory wpływały na wybór władcy."
+        },
+        {
+          "id": 9203,
+          "locator": "s. 14",
+          "heading": "Liberum veto i konfederacje",
+          "text": "Konstytucja zniosła liberum veto, czyli zasadę, zgodnie z którą sprzeciw jednego posła mógł zerwać obrady sejmu i unieważnić wszystkie podjęte na nim uchwały. Zasada ta przez dziesięciolecia paraliżowała państwo: wiele sejmów zostało zerwanych, a obce mocarstwa, zwłaszcza Rosja i Prusy, przekupywały posłów, aby blokować reformy. W miejsce jednomyślności wprowadzono podejmowanie uchwał większością głosów. Zakazano także zawiązywania konfederacji, czyli związków szlachty, które wcześniej służyły do wymuszania decyzji politycznych, często pod osłoną obcych wojsk."
+        },
+        {
+          "id": 9204,
+          "locator": "s. 15",
+          "heading": "Mieszczanie i chłopi",
+          "text": "Do Konstytucji włączono uchwalone w kwietniu 1791 roku Prawo o miastach królewskich. Mieszczanie otrzymali nietykalność osobistą, prawo nabywania dóbr ziemskich oraz dostęp do niektórych urzędów i stopni oficerskich. Chłopów wzięto pod opiekę prawa i rządu krajowego, jednak pańszczyzna nie została zniesiona, a chłopi nie uzyskali wolności osobistej. Reformy wywołały sprzeciw części magnaterii, która w 1792 roku zawiązała konfederację targowicką i wezwała na pomoc Rosję. Po przegranej wojnie z Rosją Konstytucja przestała obowiązywać, a w 1793 roku nastąpił drugi rozbiór Rzeczypospolitej."
+        }
+      ],
+      "questions": [
+        {
+          "version_id": 9003,
+          "family_id": 9003,
+          "version": 1,
+          "text": "Omów najważniejsze postanowienia Konstytucji 3 maja.",
+          "style": "open",
+          "difficulty": "recall",
+          "primary_topic_id": null,
+          "objective_id": null,
+          "status": "approved",
+          "suggested_prep_s": 30,
+          "suggested_answer_s": 120,
+          "source_policy": "materials",
+          "rubric": {
+            "essential_points": [
+              {
+                "id": "p1",
+                "text": "Wprowadzenie trójpodziału władzy na ustawodawczą, wykonawczą i sądowniczą.",
+                "weight": 0.25,
+                "alternatives": [
+                  "podział władzy na trzy"
+                ],
+                "passage_ids": [
+                  9202
+                ]
+              },
+              {
+                "id": "p2",
+                "text": "Zniesienie liberum veto i podejmowanie uchwał większością głosów.",
+                "weight": 0.25,
+                "alternatives": [],
+                "passage_ids": [
+                  9203
+                ]
+              },
+              {
+                "id": "p3",
+                "text": "Zniesienie wolnej elekcji i wprowadzenie monarchii dziedzicznej.",
+                "weight": 0.25,
+                "alternatives": [
+                  "tron dziedziczny",
+                  "dziedziczność tronu"
+                ],
+                "passage_ids": [
+                  9202
+                ]
+              },
+              {
+                "id": "p4",
+                "text": "Rozszerzenie praw mieszczan (Prawo o miastach) i objęcie chłopów opieką prawa.",
+                "weight": 0.25,
+                "alternatives": [],
+                "passage_ids": [
+                  9204
+                ]
+              }
+            ],
+            "enrichment_points": [
+              {
+                "text": "Zakaz konfederacji.",
+                "passage_ids": [
+                  9203
+                ]
+              },
+              {
+                "text": "Rząd Straż Praw i odpowiedzialność ministrów przed sejmem.",
+                "passage_ids": [
+                  9202
+                ]
+              },
+              {
+                "text": "Uchwalona w 1791 roku przez Sejm Czteroletni; uznawana za pierwszą w Europie nowoczesną konstytucję.",
+                "passage_ids": [
+                  9201
+                ]
+              }
+            ],
+            "misconceptions": [
+              "Konstytucja 3 maja zniosła pańszczyznę.",
+              "Konstytucja utrzymała wolną elekcję.",
+              "Konstytucja została uchwalona po drugim rozbiorze."
+            ],
+            "major_error_rules": [
+              "Stwierdzenie, że Konstytucja 3 maja zniosła pańszczyznę lub dała chłopom wolność osobistą.",
+              "Stwierdzenie, że Konstytucja utrzymała wolną elekcję albo liberum veto."
+            ],
+            "model_answer": "Konstytucja 3 maja z 1791 roku wprowadziła trójpodział władzy, zniosła liberum veto i wolną elekcję, ustanawiając monarchię dziedziczną. Rozszerzyła prawa mieszczan i objęła chłopów opieką prawa, nie znosząc pańszczyzny.",
+            "expanded_explanation": null
+          }
+        },
+        {
+          "version_id": 9004,
+          "family_id": 9004,
+          "version": 1,
+          "text": "Dlaczego Konstytucja 3 maja zniosła liberum veto?",
+          "style": "short",
+          "difficulty": "apply",
+          "primary_topic_id": null,
+          "objective_id": null,
+          "status": "approved",
+          "suggested_prep_s": 10,
+          "suggested_answer_s": 45,
+          "source_policy": "materials",
+          "rubric": {
+            "essential_points": [
+              {
+                "id": "p1",
+                "text": "Liberum veto pozwalało jednemu posłowi zerwać sejm i unieważnić jego uchwały.",
+                "weight": 0.5,
+                "alternatives": [
+                  "sprzeciw jednego posła zrywał sejm"
+                ],
+                "passage_ids": [
+                  9203
+                ]
+              },
+              {
+                "id": "p2",
+                "text": "Paraliżowało to państwo i było wykorzystywane przez obce mocarstwa do blokowania reform, np. przez przekupywanie posłów.",
+                "weight": 0.5,
+                "alternatives": [],
+                "passage_ids": [
+                  9203
+                ]
+              }
+            ],
+            "enrichment_points": [
+              {
+                "text": "W miejsce jednomyślności wprowadzono głosowanie większością.",
+                "passage_ids": [
+                  9203
+                ]
+              }
+            ],
+            "misconceptions": [
+              "Liberum veto było prawem króla do odrzucania ustaw."
+            ],
+            "major_error_rules": [
+              "Przypisanie liberum veto królowi zamiast pojedynczemu posłowi."
+            ],
+            "model_answer": "Liberum veto pozwalało jednemu posłowi zerwać sejm, co paraliżowało państwo i umożliwiało obcym mocarstwom blokowanie reform przez przekupywanie posłów.",
+            "expanded_explanation": null
+          }
+        }
+      ]
+    }
+  ]
+}

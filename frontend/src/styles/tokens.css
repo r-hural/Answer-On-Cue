@@ -1,0 +1,187 @@
+/* AnswerOnCue design tokens. Shared by docs/templates/ and, later, the React frontend. */
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/source-serif-4-latin-ext-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/source-serif-4-latin-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/source-serif-4-latin-ext-italic.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/source-serif-4-latin-italic.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* UI sans: Public Sans, variable weight, self-hosted (fonts/, SIL OFL). */
+@font-face {
+  font-family: "Public Sans";
+  src: url("fonts/public-sans-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("fonts/public-sans-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("fonts/public-sans-latin-ext-wght-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("fonts/public-sans-latin-wght-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Neutrals: one cool ramp, nothing else is grey. */
+  --n-0: #ffffff;
+  --n-25: #fafbfb; /* zebra stripe: barely there */
+  --n-50: #f6f8f8;
+  --n-100: #f1f4f5;
+  --n-150: #e9eef0;
+  --n-200: #dde3e5;
+  --n-300: #cbd3d6;
+  --n-500: #627079;
+  --n-600: #475963;
+  --n-700: #33444d;
+  --n-900: #14202a;
+
+  /* Ink-teal: primary action, current stage, live state. Nowhere else. */
+  --teal-50: #eef6f5;
+  --teal-100: #e3f0ef;
+  --teal-200: #c4dfdc;
+  --teal-600: #1f5f5b;
+  --teal-700: #17504c;
+  --teal-800: #103d3a;
+
+  /* Meaning colours, only where they carry meaning. */
+  --red-50: #fbefed;
+  --red-600: #b3392b;
+  --red-200: #e3b3ac; /* border of the danger button */
+  --red-700: #8f2c21;
+  --amber-50: #fdf5e6;
+  --amber-500: #b5822b; /* low-time timer ring: calm, not alarming */
+  --amber-600: #9a6409;
+  --amber-800: #6e4705; /* text on amber-50 notices */
+  --green-50: #edf6ef;
+  --green-100: #d3eadb; /* fill of the Strong coverage status */
+  --green-600: #2f7a45;
+  --green-800: #22593a; /* text on green-50 notices */
+
+  /* Bands (factual score): Weak / Needs improvement / Good / Very good. */
+  --band-weak: #b3392b;
+  --band-weak-bg: #fbefed;
+  --band-needs: #9a6409;
+  --band-needs-bg: #fdf5e6;
+  --band-good: #2f7a45;
+  --band-good-bg: #edf6ef;
+  --band-very-good: #2b4c8c; /* deep blue: never the teal of "now" */
+  --band-very-good-bg: #eaf0fa;
+
+  /* Roles */
+  --bg: var(--n-0);
+  --surface: var(--n-100);
+  --surface-raised: var(--n-0);
+  --zebra: var(--n-25); /* every second row of a .rows.zebra list */
+  --line: var(--n-200);
+  --line-strong: var(--n-300);
+  --text: var(--n-900);
+  --text-2: var(--n-700);
+  --text-3: var(--n-600);
+  --accent: var(--teal-600);
+  --accent-hover: var(--teal-700);
+  --accent-press: var(--teal-800);
+  --accent-soft: var(--teal-100);
+  --accent-ink: var(--teal-700);
+  --focus: var(--teal-600);
+
+  /* Type */
+  --font-ui: "Public Sans", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-content: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace; /* inline code: paths, keys */
+  --fs-12: 0.75rem;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-15: 0.9375rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-30: 1.875rem;
+  --fs-40: 2.5rem;
+  --fs-48: 3rem;
+  --lh-tight: 1.2;
+  --lh-content: 1.45;
+  --lh-ui: 1.5;
+
+  /* Space: 4/8 scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+
+  /* Shape and depth.
+     Radius scale: xs 4 · sm 8 · md 12 · lg 16 · xl 24 · pill 999.
+     xs: small tags and inline marks (kbd, code, band counts, pause tags, legend samples, pause cuts).
+     sm: small buttons, nav items, bars. md: buttons, inputs, choices. lg: boxes, rows, tables, notices.
+     xl: panels, dialogs, empty states. pill: chips, bands, statuses, and any bar or track whose radius
+     is half its height (meters, segments, scrub, level bars). Markers under 10px (band squares) use
+     calc(var(--r-xs) / 2), so they stay squares and never read as the round coverage markers. */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+  --shadow-primary: 0 1px 2px rgb(16 61 58 / 0.28), 0 6px 16px rgb(16 61 58 / 0.18);
+
+  /* Layout */
+  --content-max: 1080px;
+  --measure: 68ch;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 120ms;
+  --t-med: 240ms;
+}

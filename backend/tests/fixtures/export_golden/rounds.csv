@@ -1,0 +1,3 @@
+﻿round_id,round_started_at,round_finished_at,round_type,status,feedback_timing,source_policy,questions,answers
+1,2026-10-20 21:00:05+13:00,2026-10-20 21:00:05+13:00,standard,finished,practice,materials,2,2
+2,2026-10-22 10:30:00+13:00,2026-10-22 10:40:00+13:00,standard,finished,exam,materials,2,3

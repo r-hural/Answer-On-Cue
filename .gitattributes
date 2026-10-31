@@ -1,0 +1,2 @@
+# Golden export files are compared byte for byte: no line-ending conversion.
+backend/tests/fixtures/export_golden/* -text

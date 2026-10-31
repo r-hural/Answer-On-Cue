@@ -1,0 +1,51 @@
+{
+  "sample_rate": 16000,
+  "sapi_voice": "Microsoft David Desktop",
+  "files": {
+    "speech_mid.wav": {
+      "duration_ms": 7510,
+      "samples": 120155,
+      "speech": [
+        [
+          2000,
+          5510
+        ]
+      ]
+    },
+    "speech_noisy.wav": {
+      "duration_ms": 7510,
+      "samples": 120155,
+      "speech": [
+        [
+          2000,
+          5510
+        ]
+      ],
+      "noise_dbfs": -50
+    },
+    "click_only.wav": {
+      "duration_ms": 3000,
+      "samples": 48000,
+      "speech": [],
+      "clicks": [
+        [
+          500,
+          560
+        ],
+        [
+          1500,
+          1560
+        ],
+        [
+          2500,
+          2560
+        ]
+      ]
+    },
+    "silence.wav": {
+      "duration_ms": 3000,
+      "samples": 48000,
+      "speech": []
+    }
+  }
+}

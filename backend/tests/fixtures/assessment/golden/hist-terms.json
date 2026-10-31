@@ -1,0 +1,17 @@
+{
+  "id": "hist-terms",
+  "question_version_id": 9003,
+  "transcript": "Konstytucja 3 maja, czyli Ustawa Rządowa uchwalona przez Sejm Czteroletni w 1791 roku, wprowadziła trójpodział władzy: władzę ustawodawczą sprawował dwuizbowy sejm, wykonawczą król wraz ze Strażą Praw, a sądowniczą niezawisłe sądy. Zniesiono liberum veto i zakazano konfederacji, a uchwały zapadały większością głosów. W miejsce wolnej elekcji wprowadzono monarchię dziedziczną, z tronem przeznaczonym dla dynastii saskiej. Ponadto do konstytucji włączono Prawo o miastach królewskich, które przyznało mieszczanom nietykalność osobistą i prawo nabywania dóbr ziemskich, a chłopów wzięto pod opiekę prawa i rządu.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed",
+    "bands": [
+      "good",
+      "very_good"
+    ],
+    "no_issue_dimensions": [
+      "terminology"
+    ]
+  }
+}

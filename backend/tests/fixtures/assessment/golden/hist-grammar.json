@@ -1,0 +1,58 @@
+{
+  "id": "hist-grammar",
+  "question_version_id": 9003,
+  "transcript": "Konstytucja 3 maja wprowadziła trójpodział władzy na ustawodawczą, wykonawczą i sądowniczą. Ona zniosła liberum veto, bo przez tego veta jeden poseł mógł zerwać sejmu. Zamiast wolnej elekcji wprowadzili monarchia dziedziczna. Mieszczanie dostali więcej prawów, mogli kupować ziemie i być w urzędach, a chłopy zostały wzięte pod opieką prawa.",
+  "outcome": "answered",
+  "delivery": {
+    "preparation_used_ms": 12000,
+    "speech_start_latency_ms": 900,
+    "total_response_latency_ms": 12900,
+    "answer_duration_ms": 52000,
+    "first_to_last_speech_ms": 49500,
+    "speech_ms": 43000,
+    "leading_silence_ms": 900,
+    "trailing_silence_ms": 1600,
+    "internal_silence_ms": 6500,
+    "silence_ratio": 0.13,
+    "longest_internal_silence_ms": 2300,
+    "long_pause_count": 1,
+    "very_long_pause_count": 0,
+    "long_pauses_per_min": 1.2,
+    "words": 82,
+    "words_per_minute": 121.0,
+    "filler_count": 3,
+    "filler_per_min": 1.2,
+    "filler_examples": [
+      "yyy",
+      "eee"
+    ],
+    "fillers_lower_bound": true,
+    "pauses": [
+      {
+        "start_ms": 21000,
+        "end_ms": 23300,
+        "kind": "long"
+      }
+    ],
+    "flags": [],
+    "unavailable": {},
+    "approximate": true,
+    "interrupted": false,
+    "detector": "webrtc-vad",
+    "thresholds": {
+      "speech_start_flag_ms": 3000,
+      "long_pause_ms": 2000,
+      "very_long_pause_ms": 5000
+    }
+  },
+  "expect": {
+    "status": "assessed",
+    "bands": [
+      "good",
+      "very_good"
+    ],
+    "min_issues": {
+      "grammar": 2
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "hist-empty",
+  "question_version_id": 9004,
+  "transcript": "",
+  "outcome": "answered",
+  "delivery": {
+    "preparation_used_ms": 12000,
+    "speech_start_latency_ms": null,
+    "total_response_latency_ms": null,
+    "answer_duration_ms": 45000,
+    "first_to_last_speech_ms": null,
+    "speech_ms": 0,
+    "leading_silence_ms": null,
+    "trailing_silence_ms": null,
+    "internal_silence_ms": null,
+    "silence_ratio": null,
+    "longest_internal_silence_ms": null,
+    "long_pause_count": null,
+    "very_long_pause_count": null,
+    "long_pauses_per_min": null,
+    "words": null,
+    "words_per_minute": null,
+    "filler_count": null,
+    "filler_per_min": null,
+    "filler_examples": [],
+    "fillers_lower_bound": true,
+    "pauses": [],
+    "flags": [],
+    "unavailable": {
+      "speech_start_latency_ms": "no_speech",
+      "leading_silence_ms": "no_speech"
+    },
+    "approximate": true,
+    "interrupted": false,
+    "detector": "webrtc-vad",
+    "thresholds": {
+      "speech_start_flag_ms": 3000,
+      "long_pause_ms": 2000,
+      "very_long_pause_ms": 5000
+    }
+  },
+  "expect": {
+    "status": "no_speech",
+    "no_ai_call": true
+  }
+}

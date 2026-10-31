@@ -1,0 +1,8 @@
+﻿round_id,round_started_at,round_type,feedback_timing,source_policy,ordinal,role,attempt_kind,outcome,band,factual,language,total,preparation_used_ms,speech_start_latency_ms,total_response_latency_ms,answer_duration_ms,question,transcript
+1,2026-10-20 21:00:05+13:00,standard,practice,materials,1,main,initial,answered,good,66.0,70.0,66.0,8000,800,4800,20000,Omów ustrój Aten.,Odpowiedź ucznia.
+1,2026-10-20 21:00:05+13:00,standard,practice,materials,2,main,initial,dont_know,,,,,,,,,Czym był ostracyzm?,
+2,2026-10-22 10:30:00+13:00,standard,exam,materials,1,main,initial,answered,weak,20.0,70.0,20.0,500,,,20000,Omów ustrój Aten.,"Pierwsza linia, ""cytat"".
+
+Druga linia; ąęł."
+2,2026-10-22 10:30:00+13:00,standard,exam,materials,1,followup,initial,answered,needs_improvement,45.0,70.0,45.0,8000,800,4800,20000,Omów ustrój Aten.,Odpowiedź ucznia.
+2,2026-10-22 10:30:00+13:00,standard,exam,materials,2,main,initial,interrupted,,,,,,,,,Czym był ostracyzm?,

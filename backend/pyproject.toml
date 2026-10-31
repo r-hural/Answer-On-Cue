@@ -1,0 +1,12 @@
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: calls real external services; skipped without keys", "piper: needs a downloaded Piper voice model; skipped without one"]
+addopts = "-m 'not live'"
+pythonpath = ["."]

@@ -1,0 +1,12 @@
+Polityka źródeł: Rozszerz temat
+Fragmenty źródłowe:
+<passage id="101">Demokracja ateńska rozwinęła się w V wieku p.n.e. Głównym organem była eklezja, w której zasiadali pełnoprawni obywatele.</passage>
+<passage id="102">Reformy Klejstenesa z 508 roku p.n.e. podzieliły obywateli na dziesięć fyl. Każda fyla wybierała pięćdziesięciu członków Rady Pięciuset.</passage>
+<passage id="103">Ostracyzm pozwalał wygnać z miasta obywatela uznanego za groźnego dla ustroju. Głosowano, pisząc imię na skorupie.</passage>
+Pytania do sprawdzenia:
+<question index="0">Omów rolę eklezji i reform Klejstenesa w demokracji ateńskiej.
+Punkty kluczowe:
+- Eklezja była głównym organem władzy. (fragmenty: 101; podstawa: source)
+- Klejstenes podzielił obywateli na dziesięć fyl. (fragmenty: 102; podstawa: expanded)
+Odpowiedź modelowa: Eklezja była głównym organem demokracji ateńskiej, a reformy Klejstenesa z 508 roku p.n.e. podzieliły obywateli na dziesięć fyl.
+Poza materiałami: Eklezja zbierała się kilkadziesiąt razy w roku.</question>

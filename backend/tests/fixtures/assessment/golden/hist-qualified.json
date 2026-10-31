@@ -1,0 +1,14 @@
+{
+  "id": "hist-qualified",
+  "question_version_id": 9003,
+  "transcript": "Konstytucja 3 maja, uchwalona w 1791 roku przez Sejm Czteroletni, według większości historyków była pierwszą nowoczesną konstytucją w Europie, choć niektórzy badacze wskazują na wcześniejsze akty. Wprowadziła trójpodział władzy na ustawodawczą, wykonawczą i sądowniczą. Zniosła liberum veto oraz wolną elekcję, w miejsce której wprowadzono monarchię dziedziczną. Rozszerzyła też prawa mieszczan, a chłopów objęła opieką prawa, choć nie zniosła pańszczyzny.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed",
+    "no_issue_quoting": {
+      "dimension": "precision",
+      "text": "według większości"
+    }
+  }
+}

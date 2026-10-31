@@ -1,0 +1,18 @@
+{
+  "id": "bio-concise",
+  "question_version_id": 9002,
+  "transcript": "Fotosynteza zachodzi w chloroplastach, a chlorofil, który pochłania światło, znajduje się w błonach tylakoidów.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed",
+    "bands": [
+      "good",
+      "very_good"
+    ],
+    "max_language_issues": 1,
+    "no_issue_dimensions": [
+      "structure"
+    ]
+  }
+}

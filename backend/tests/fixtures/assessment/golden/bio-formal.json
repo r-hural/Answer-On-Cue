@@ -1,0 +1,10 @@
+{
+  "id": "bio-formal",
+  "question_version_id": 9001,
+  "transcript": "Fotosynteza to proces, w którym rośliny wytwarzają glukozę z dwutlenku węgla i wody. Energię do tego procesu zapewnia światło, pochłaniane przez chlorofil. Proces ten zachodzi w chloroplastach. Produktem ubocznym jest tlen, który roślina uwalnia do atmosfery.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed"
+  }
+}

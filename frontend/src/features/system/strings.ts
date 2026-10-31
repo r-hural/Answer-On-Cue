@@ -1,0 +1,28 @@
+export const systemStrings = {
+  nav: 'Program',
+  heading: 'Program',
+  lede: 'Version and updates.',
+  updatingTo: (version: string) => `Updating to ${version}…`,
+  updateProgress: 'Update in progress',
+  version: (version: string) => `Version ${version}`,
+  updateAvailable: (latest: string) => `Version ${latest} is available.`,
+  upToDate: 'You have the latest version.',
+  update: 'Update',
+  recheck: 'Check again',
+  loading: 'Loading…',
+  loadError: 'Could not load information about the program.',
+  lastUpdateFailed: (message: string) => `The last update failed: ${message}`,
+  confirmUpdate: 'The program will close briefly and restart. Continue?',
+  updating: 'Updating… This page will refresh by itself.',
+  updateTooLong: 'The update is taking too long. Start the program from the desktop shortcut.',
+  updateFailed: 'Could not start the update.',
+  close: 'Close',
+  confirmClose: 'Close the AnswerOnCue program?',
+  runningJobs: (count: number) =>
+    `${count} running task(s) will be interrupted; you can resume them in the Library.`,
+  closedTitle: 'AnswerOnCue is closed',
+  notRunning: 'Not running',
+  closeFailed: 'Could not close the program.',
+  closed:
+    'The program has been closed. You can close this tab. To start it again, use the “AnswerOnCue” shortcut on your desktop.',
+} as const

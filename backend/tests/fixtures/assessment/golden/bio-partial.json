@@ -1,0 +1,18 @@
+{
+  "id": "bio-partial",
+  "question_version_id": 9001,
+  "transcript": "Fotosynteza to proces, który zachodzi w roślinach. Roślina pobiera do niego dwutlenek węgla z powietrza i wodę z gleby. Ten proces zachodzi w chloroplastach, głównie w liściach.",
+  "outcome": "answered",
+  "delivery": null,
+  "expect": {
+    "status": "assessed",
+    "bands": [
+      "needs_improvement",
+      "good"
+    ],
+    "points_missing": [
+      "p2",
+      "p3"
+    ]
+  }
+}
