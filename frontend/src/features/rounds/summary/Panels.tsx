@@ -5,6 +5,7 @@ import { roundStrings } from '../strings'
 import type { ItemRow, RoundReport } from '../reports'
 import { bandClass, bandKey, BANDS, dateTime, metricOrUnavailable, score, seconds, seconds1 } from '../feedback/format'
 import { useContentLanguage } from '../../language/ContentLanguage'
+import { Loading } from '../../../ui/Spinner'
 
 const t = roundStrings.summary
 const a = roundStrings.adaptive
@@ -200,7 +201,7 @@ export function ExtensionColumn({ offer, subjectId, actions }: { offer: Extensio
   const main = actions.primary ? 'btn primary' : 'btn'
   const preparing = offer.status === 'generating' && (
     <>
-      <p role="status">{actions.slow ? a.slow : a.preparing}</p>
+      <Loading>{actions.slow ? a.slow : a.preparing}</Loading>
       {actions.slow && (
         <div className="actions">
           <button type="button" className="btn small" onClick={actions.onCheck}>

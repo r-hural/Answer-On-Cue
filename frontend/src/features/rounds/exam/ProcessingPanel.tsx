@@ -1,4 +1,5 @@
 import type { AttemptResult, FollowUpState } from '../api'
+import { Spinner } from '../../../ui/Spinner'
 import { formatClock } from '../clock'
 import { roundStrings } from '../strings'
 import { TimerRing } from './TimerRing'
@@ -94,7 +95,10 @@ export function ProcessingPanel({
           {labels.map((label, i) => (
             <li key={label}>
               <span>{label}</span>
-              <span className={CHIP[steps[i]].className}>{CHIP[steps[i]].label}</span>
+              <span className={CHIP[steps[i]].className}>
+                {steps[i] === 'progress' && <Spinner />}
+                {CHIP[steps[i]].label}
+              </span>
             </li>
           ))}
         </ul>

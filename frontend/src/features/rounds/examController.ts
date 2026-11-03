@@ -37,6 +37,8 @@ const LEVEL_RANGE_DB = 40
 const TRIM_SLACK_MS = 250
 /** Clocks that disagree by less than this are taken to agree. */
 const CLOCK_TOLERANCE_MS = 50
+/** The question waits this long for its voice before it shows without it. */
+export const VOICE_HOLD_MS = 10_000
 
 export interface ExamDeps {
   open: typeof openListeningSession
@@ -47,6 +49,8 @@ export interface ExamDeps {
   noiseFloorDb: number
   /** The wall clock (Date.now()), which keeps running while the computer sleeps. */
   wallNow?: () => number
+  /** Starts preparing the voice of the questions a round state names (current and upcoming). */
+  prefetch?: (state: RoundState) => void
 }
 
 export interface ExamView {
@@ -67,6 +71,10 @@ export interface ExamView {
   answerDeadline: number | null
   listening: 'pending' | 'on' | 'off'
   reading: boolean
+  /** The voice is being made: the reading has not started playing yet. */
+  voicePreparing: boolean
+  /** The question text is on screen; it waits for its voice (up to VOICE_HOLD_MS) so both start together. */
+  questionShown: boolean
   /** 0..1 per bar, oldest first. */
   levels: number[]
   result: AttemptResult | null
@@ -97,6 +105,7 @@ interface Runtime {
   readyAt: number | null
   playbackMs: number
   reading: Reading | null
+  revealTimer: ReturnType<typeof setTimeout> | null
   prepStarted: boolean
   prepStartAt: number | null
   prepTimer: ReturnType<typeof setTimeout> | null
@@ -200,6 +209,8 @@ export class ExamController {
       answerDeadline: null,
       listening: 'pending',
       reading: false,
+      voicePreparing: false,
+      questionShown: true,
       levels: flatLevels(),
       result: null,
       retrying: false,
@@ -272,6 +283,11 @@ export class ExamController {
   private enter(state: RoundState): void {
     if (this.disposed) return
     this.readServerClock(state)
+    try {
+      this.deps.prefetch?.(state)
+    } catch {
+      // preparing ahead is only a help
+    }
     const fresh = this.freshLoad
     this.freshLoad = false
     this.set({
@@ -338,6 +354,7 @@ export class ExamController {
       readyAt: null,
       playbackMs: 0,
       reading: null,
+      revealTimer: null,
       prepStarted: false,
       prepStartAt: null,
       prepTimer: null,
@@ -362,6 +379,8 @@ export class ExamController {
       answerDeadline: null,
       listening: 'pending',
       reading: false,
+      voicePreparing: false,
+      questionShown: state.config.question_audio.mode !== 'premium',
       levels: flatLevels(),
       result: null,
       retrying: false,
@@ -373,8 +392,18 @@ export class ExamController {
     if (state.config.question_audio.mode === 'off') {
       void this.questionReady(0)
     } else {
+      if (!this.view.questionShown) rt.revealTimer = setTimeout(() => this.reveal(rt), VOICE_HOLD_MS)
       this.startReadingNow(rt, state)
     }
+  }
+
+  /** Puts the held question on screen; it counts as shown from now. */
+  private reveal(rt: Runtime): void {
+    if (rt.revealTimer) clearTimeout(rt.revealTimer)
+    rt.revealTimer = null
+    if (this.disposed || this.rt !== rt || this.view.questionShown) return
+    rt.shownAt = this.deps.now()
+    this.set({ questionShown: true })
   }
 
   private async openSession(rt: Runtime): Promise<ListeningSession | null> {
@@ -403,13 +432,26 @@ export class ExamController {
     const reading = this.deps.read((state.current as { text: string }).text, { ...state.config.question_audio, language: state.config.language ?? null })
     rt.reading = reading
     rt.session?.setMuted(true)
-    this.set({ reading: true })
+    const playing = () => {
+      if (this.disposed || this.rt !== rt || rt.reading !== reading) return
+      this.set({ voicePreparing: false })
+      this.reveal(rt)
+    }
+    if (reading.started) {
+      this.set({ reading: true, voicePreparing: true })
+      void reading.started.then(playing)
+    } else {
+      this.set({ reading: true })
+      playing()
+    }
     void reading.done.then((result) => {
       if (this.disposed || this.rt !== rt || rt.reading !== reading) return
       rt.reading = null
       rt.session?.setMuted(false)
+      this.reveal(rt)
       this.set({
         reading: false,
+        voicePreparing: false,
         voiceFailed: this.view.voiceFailed || result.failed,
         voiceMessage: result.message ?? this.view.voiceMessage ?? null,
       })
@@ -1038,6 +1080,7 @@ export class ExamController {
     this.rt = null
     if (rt.prepTimer) clearTimeout(rt.prepTimer)
     if (rt.answerTimer) clearTimeout(rt.answerTimer)
+    if (rt.revealTimer) clearTimeout(rt.revealTimer)
     rt.reading?.stop()
     rt.unsubscribeLevel?.()
     rt.session?.dispose()
@@ -1047,6 +1090,8 @@ export class ExamController {
       answerDeadline: null,
       listening: 'pending',
       reading: false,
+      voicePreparing: false,
+      questionShown: true,
       levels: flatLevels(),
       finishRetryAt: null,
     })

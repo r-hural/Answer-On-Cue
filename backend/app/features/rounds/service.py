@@ -500,6 +500,7 @@ def get_state(session: Session, round_id: int) -> RoundState:
     attempts = _attempts(session, items)
     open_round = row.status in OPEN_STATUSES
     current = current_attempt = follow_up = latest = None
+    upcoming: list[str] = []
     config = _config(row)
     can_answer_again = False
     if open_round and row.current_index < len(items):
@@ -520,6 +521,7 @@ def get_state(session: Session, round_id: int) -> RoundState:
         )
         current_attempt = _attempt_out(latest)
         can_answer_again = _repeat_allowed(config, row, attempts[item.id])
+        upcoming = _upcoming(session, row, items, follow_row, follow_up)
     events = _events(session, round_id)
     pause_count, paused_ms = _pauses(row, events)
     return RoundState(
@@ -549,7 +551,37 @@ def get_state(session: Session, round_id: int) -> RoundState:
         follow_up=follow_up,
         can_answer_again=can_answer_again,
         clock=_clock(row, config, latest, events),
+        upcoming=upcoming,
     )
+
+
+def _upcoming(
+    session: Session,
+    row: Round,
+    items: list[RoundItem],
+    follow_row: FollowUp | None,
+    follow_up: FollowUpState | None,
+) -> list[str]:
+    """The questions that may be asked next: the current main question's ready follow-up (not
+    yet asked), then the next main question."""
+    version_ids: list[int] = []
+    if (
+        row.part == "main"
+        and follow_row is not None
+        and follow_up is not None
+        and follow_up.status == "ready"
+        and follow_row.item_id is not None
+    ):
+        asked = session.get(RoundItem, follow_row.item_id)
+        tried = _latest(session, asked.id) if asked is not None else None
+        if asked is not None and (tried is None or tried.outcome == "pending"):
+            version_ids.append(asked.question_version_id)
+    if row.current_index + 1 < len(items):
+        version_ids.append(items[row.current_index + 1].question_version_id)
+    return [
+        questions.get_question(session, version_id, with_rubric=False).text
+        for version_id in version_ids
+    ]
 
 
 def _repeat_allowed(config: RoundConfig, row: Round, tried: list[Attempt]) -> bool:

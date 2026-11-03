@@ -12,6 +12,7 @@ import { roundPolicyLabel } from '../rounds/sourcePolicy'
 import { ProgressTabs } from './ProgressTabs'
 import { progressStrings as t } from './strings'
 import { useChapters, type SubjectWithChapters } from './useChapters'
+import { Loading } from '../../ui/Spinner'
 
 type SubjectRef = SubjectWithChapters
 
@@ -233,7 +234,7 @@ export function HistoryPage() {
       </form>
 
       {error && <Notice kind="error">{error}</Notice>}
-      {!rows && !error && <p role="status">{t.loading}</p>}
+      {!rows && !error && <Loading>{t.loading}</Loading>}
 
       {rows && rows.length === 0 && (
         <section className="empty" aria-labelledby="h-empty">

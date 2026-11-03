@@ -96,7 +96,7 @@ def test_running_server_only_opens_browser(root, ours):
     rec = Recorder()
     assert rec.run() == 0
     assert rec.spawned == []
-    assert rec.opened == [f"http://127.0.0.1:{ours}/"]
+    assert rec.opened == [f"http://answer-on-cue.localhost:{ours}/"]
 
 
 def test_second_click_while_starting(root, ours):
@@ -132,7 +132,7 @@ def test_starts_hidden_server_then_opens(root, monkeypatch):
     assert kwargs["env"]["PYTHONUTF8"] == "1"
     assert kwargs["cwd"] == str(launcher.backend_dir())
     assert (root / "data" / "logs" / "server.log").exists()
-    assert rec.opened == [f"http://127.0.0.1:{port}/"]
+    assert rec.opened == [f"http://answer-on-cue.localhost:{port}/"]
     assert not (root / "data" / "launcher.lock").exists()
     for server in served:
         server.shutdown()
@@ -151,7 +151,7 @@ def test_other_program_on_port_picks_and_saves_fallback(root, other, monkeypatch
     assert json.loads((root / "data" / "launcher.json").read_text(encoding="utf-8"))["port"] == (
         fallback
     )
-    assert rec.opened == [f"http://127.0.0.1:{fallback}/"]
+    assert rec.opened == [f"http://answer-on-cue.localhost:{fallback}/"]
 
 
 def test_all_ports_taken_alerts(root, other, monkeypatch):

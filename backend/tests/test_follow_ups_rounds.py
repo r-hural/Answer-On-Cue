@@ -160,6 +160,27 @@ def test_ready_follow_up_moves_round_to_follow_up_question(client, db, world):
     assert state["follow_up"]["status"] == "ready"
 
 
+def test_ready_follow_up_is_upcoming_until_asked(client, db, world):
+    rid = start_round(client, world, "practice", 2, follow_ups=ON)["id"]
+    main = answer_current(client, rid)
+    add_follow_up(db, main)
+    save_ready_follow_up(db, main)
+    db.expire_all()
+    waiting = state_of(client, rid)
+    assert (waiting["part"], waiting["phase"]) == ("main", "processing")
+    assert waiting["upcoming"][0] == FOLLOW_UP_TEXT
+    assert len(waiting["upcoming"]) == 2  # then the next main question
+    mark_ready(db, main)
+    asked = state_of(client, rid)
+    assert asked["part"] == "followup"
+    assert FOLLOW_UP_TEXT not in asked["upcoming"]
+    answer_current(client, rid)
+    mark_ready(db, asked["current_attempt"]["id"])
+    feedback = state_of(client, rid)
+    assert (feedback["part"], feedback["phase"]) == ("main", "feedback")
+    assert FOLLOW_UP_TEXT not in feedback["upcoming"]
+
+
 def test_follow_up_answer_then_feedback_shows_main(client, db, world):
     rid, main, _ = to_follow_up(client, db, world)
     follow = answer_current(client, rid)

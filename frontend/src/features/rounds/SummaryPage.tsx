@@ -40,6 +40,7 @@ import {
 import { QuestionRows } from './summary/QuestionRows'
 import { RetrySummary } from './summary/RetrySummary'
 import { uploadQueue, type UploadQueue } from './uploads'
+import { Loading } from '../../ui/Spinner'
 
 const t = roundStrings.summary
 const exam = roundStrings.exam
@@ -300,7 +301,7 @@ function SummaryBody({ roundId, pollMs, onLanguage }: { roundId: number; pollMs:
   if (error && !report) {
     return <Notice kind="error">{error}</Notice>
   }
-  if (!report) return <p role="status">{t.loading}</p>
+  if (!report) return <Loading>{t.loading}</Loading>
 
   const early = report.status === 'abandoned'
   const ended = report.status === 'finished' || early

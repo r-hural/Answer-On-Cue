@@ -17,6 +17,7 @@ import { ProgressTabs } from './ProgressTabs'
 import { progressStrings } from './strings'
 import { useChapters, type SubjectWithChapters } from './useChapters'
 import { ContentLanguageProvider, useContentLanguage } from '../language/ContentLanguage'
+import { Loading } from '../../ui/Spinner'
 
 const t = progressStrings.coverage
 const ch = progressStrings.chapters
@@ -334,7 +335,7 @@ export function CoveragePage() {
       <ProgressTabs current="coverage" subjectId={subjectId} />
 
       {error && <Notice kind="error">{error}</Notice>}
-      {!error && !noSubjects && !coverage && <p role="status">{t.loading}</p>}
+      {!error && !noSubjects && !coverage && <Loading>{t.loading}</Loading>}
 
       {noSubjects && (
         <section className="empty" aria-labelledby="h-empty">

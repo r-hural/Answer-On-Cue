@@ -48,3 +48,30 @@ def test_change_accepted_from_local_page(raw, method, path, body):
 def test_reads_need_no_header(raw):
     assert raw.get("/api/settings").status_code == 200
     assert raw.get("/api/providers/status").status_code == 200
+
+
+@pytest.mark.parametrize(
+    "headers",
+    [
+        {
+            "X-AnswerOnCue": "1",
+            "Host": "answer-on-cue.localhost:8770",
+            "Origin": "http://answer-on-cue.localhost:8770",
+        },
+        {"X-AnswerOnCue": "1", "Host": "Answer-on-Cue.localhost:8770"},
+    ],
+    ids=["app-host", "app-host-mixed-case"],
+)
+def test_change_accepted_from_app_host(raw, headers):
+    assert (
+        raw.request("PUT", "/api/settings", json={"voice_rate": 1.1}, headers=headers).status_code
+        == 200
+    )
+
+
+def test_other_localhost_name_refused(raw):
+    headers = {"X-AnswerOnCue": "1", "Host": "evil.localhost:8770"}
+    assert (
+        raw.request("PUT", "/api/settings", json={"voice_rate": 1.1}, headers=headers).status_code
+        == 403
+    )

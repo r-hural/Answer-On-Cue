@@ -145,6 +145,8 @@ export interface RoundState {
   can_answer_again?: boolean
   /** The server's clock for a timed phase or a pause (old servers: absent). */
   clock?: PhaseClock | null
+  /** Texts of the questions that may come next, so their voice can be prepared ahead (old servers: absent). */
+  upcoming?: string[]
 }
 
 /** ISO date-times with an offset, on the server's clock. */

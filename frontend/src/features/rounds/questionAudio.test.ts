@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { server } from '../../test/msw'
-import { startReading, type Playback } from './questionAudio'
+import { clearPreparedSpeech, startReading, type Playback } from './questionAudio'
 
 const played = (): Playback => ({ ended: Promise.resolve(), stop() {} })
 
@@ -55,7 +55,10 @@ describe('startReading: the speak request', () => {
 })
 
 describe('startReading: the browser voice', () => {
-  afterEach(() => vi.unstubAllGlobals())
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    clearPreparedSpeech()
+  })
 
   function stubSpeech(voices: { lang: string }[]) {
     const speak = vi.fn((utterance: { onend: (() => void) | null }) => utterance.onend?.())

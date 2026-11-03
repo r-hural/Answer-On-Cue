@@ -233,6 +233,9 @@ class RoundState(BaseModel):
     follow_up: FollowUpState | None = None  # the current main item's, while the round is open
     can_answer_again: bool = False  # practice feedback may offer one repeat of the main question
     clock: PhaseClock | None = None
+    # texts of the questions that may come next (a ready follow-up, the next main question), so the
+    # page can prepare their voice ahead; nothing secret: they are shown when asked
+    upcoming: list[str] = []
 
 
 class RoundListItem(BaseModel):

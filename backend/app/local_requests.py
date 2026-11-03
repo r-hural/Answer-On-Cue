@@ -6,12 +6,13 @@ from urllib.parse import urlsplit
 from fastapi import HTTPException, Request
 
 FORBIDDEN = "Access denied."
-LOCAL_HOSTS = ("127.0.0.1", "localhost")
+APP_HOST = "answer-on-cue.localhost"  # browsers send *.localhost to loopback, no hosts file
+LOCAL_HOSTS = ("127.0.0.1", "localhost", APP_HOST)
 
 
 def _host_is_local(value: str) -> bool:
     parts = urlsplit(f"//{value}")
-    if parts.hostname not in LOCAL_HOSTS:
+    if (parts.hostname or "").lower() not in LOCAL_HOSTS:
         return False
     expected = os.environ.get("AOC_SERVER_PORT")
     return not expected or str(parts.port) == expected

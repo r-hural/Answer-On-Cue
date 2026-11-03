@@ -184,6 +184,10 @@ export const roundStrings = {
     uploadFailedCurrent: 'This answer has not reached the server yet, so it cannot be scored until the upload goes through.',
     clockUnit: { prepare: 'to prepare', of: (total: string) => `of ${total}` },
     question: {
+      preparing: 'Preparing the question…',
+      preparingVoice: 'Preparing the voice',
+      helpPreparing:
+        'The question appears together with its voice in a moment. Preparation time has not started, and the microphone is not listening yet.',
       reading: 'Reading aloud',
       notReading: 'Question',
       startsAfter: 'Starts when the reading ends',

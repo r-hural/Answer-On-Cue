@@ -24,6 +24,7 @@ import {
 import { ContentLanguageHost } from '../language/ContentLanguage'
 import { useJobs } from '../library/useJobs'
 import { createRound, type QuestionAudio } from '../rounds/api'
+import { prefetchRound } from '../rounds/questionAudio'
 import { type Preferences, fetchPreferences } from '../settings/api'
 import { settingsStrings } from '../settings/strings'
 import { countActive, generateQuestions, generationBody } from './api'
@@ -239,6 +240,7 @@ function QuickView({ onLanguage }: { onLanguage: (code: string | null) => void }
         if (voice !== null || !noPremium) throw failure
         round = await ask({ mode: 'browser' })
       }
+      prefetchRound(round) // the first question's voice is made while the microphone is checked
       navigate(`/practice/${round.id}/microphone`)
     } catch (failure) {
       setWarning((failure as Error).message)

@@ -9,6 +9,7 @@ import { statusClass } from './coverageFormat'
 import { progressStrings } from './strings'
 import { ContentLanguageProvider, useContentLanguage } from '../language/ContentLanguage'
 import { useSubjectLanguage } from '../language/useSubjectLanguage'
+import { Loading } from '../../ui/Spinner'
 
 const c = progressStrings.coverage
 const t = progressStrings.topic
@@ -271,7 +272,7 @@ export function TopicCoveragePage() {
         </p>
       </Notice>
     )
-  if (!current) return <p role="status">{t.loading}</p>
+  if (!current) return <Loading>{t.loading}</Loading>
   return (
     <ContentLanguageProvider code={language}>
       <Detail topic={current} layer={layer} />

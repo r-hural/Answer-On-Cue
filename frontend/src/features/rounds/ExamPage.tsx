@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, typ
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { apiGet } from '../../api/client'
 import { Notice } from '../../ui/Notice'
+import { Loading } from '../../ui/Spinner'
 import { ContentLanguageProvider } from '../language/ContentLanguage'
 import { openListeningSession } from '../recording/capture'
 import type { AttemptResult, RoundState } from './api'
@@ -20,7 +21,7 @@ import { QuestionCard } from './exam/QuestionCard'
 import { ResumePanel } from './exam/ResumePanel'
 import { RoundTop, type StageIndex } from './exam/RoundTop'
 import { TimerRing } from './exam/TimerRing'
-import { startReading } from './questionAudio'
+import { prefetchRound, startReading } from './questionAudio'
 import { readNoiseFloor } from './session'
 import { timersOf } from './setup'
 import { roundStrings } from './strings'
@@ -36,6 +37,8 @@ export interface ExamPageProps {
   /** The page clock (performance.now()); tests pass their own. */
   now?: () => number
   read?: typeof startReading
+  /** Prepares the voice of the coming questions; tests pass none. */
+  prefetch?: (state: RoundState) => void
   uploads?: UploadQueue
   pollMs?: number
 }
@@ -86,12 +89,13 @@ function ExamScreenBody({
   open = openListeningSession,
   now = () => performance.now(),
   read = startReading,
+  prefetch = prefetchRound,
   uploads = uploadQueue,
   pollMs = 1500,
 }: ExamPageProps & { roundId: number; onLanguage: (code: string | null) => void }) {
   const navigate = useNavigate()
   const [controller] = useState(
-    () => new ExamController(roundId, { open, now, read, uploads, pollMs, noiseFloorDb: readNoiseFloor() }),
+    () => new ExamController(roundId, { open, now, read, prefetch, uploads, pollMs, noiseFloorDb: readNoiseFloor() }),
   )
   const view = useSyncExternalStore(controller.subscribe, controller.getView)
   const failedUploads = useSyncExternalStore(uploads.subscribe, uploads.failed)
@@ -171,7 +175,7 @@ function ExamScreenBody({
       <>
         <ExamHeader subject={null} timing="practice" onPause={null} pauseDisabled />
         <main className="exam">
-          <p role="status">{t.loading}</p>
+          <Loading>{t.loading}</Loading>
         </main>
       </>
     )
@@ -285,7 +289,7 @@ function ExamScreenBody({
       <>
         {header}
         <main className="exam">
-          <p role="status">{t.loading}</p>
+          <Loading>{t.loading}</Loading>
         </main>
       </>
     )
@@ -346,12 +350,27 @@ function ExamScreenBody({
         <ExamActions primary={{ label: t.recording.finish, key: t.keys.space, onClick: () => void controller.finishAnswer(), disabled: view.busy }} others={[dontKnow]} />
       </>
     )
+  } else if (phase === 'question' && !view.questionShown) {
+    // the question waits for its voice, so text and reading start together
+    body = (
+      <>
+        <section className="panel exam-card exam-wait" aria-label={t.questionRegion}>
+          <Loading>{t.question.preparing}</Loading>
+          <p className="muted">{t.question.helpPreparing}</p>
+        </section>
+        <ExamActions
+          primary={{ label: t.question.readMyself, wide: t.question.readMyselfWide, key: t.keys.enter, onClick: () => controller.readMyself(), disabled: view.busy }}
+          others={[skip]}
+        />
+      </>
+    )
   } else if (phase === 'question') {
     body = (
       <>
         {card(
           <TimerRing
-            status={view.reading ? t.question.reading : t.question.notReading}
+            status={view.voicePreparing ? t.question.preparingVoice : view.reading ? t.question.reading : t.question.notReading}
+            working={view.voicePreparing}
             statusKind="listen"
             fraction={1}
             clock={formatClock(prepMs)}
@@ -407,7 +426,7 @@ function ExamScreenBody({
     )
   } else if (phase === 'recording') {
     // a reload in the middle of an answer: the round is being paused
-    body = <p role="status">{t.loading}</p>
+    body = <Loading>{t.loading}</Loading>
   } else {
     body = <ResultBody view={view} controller={controller} round={round} card={card} isLast={index === total - 1} />
   }
@@ -545,7 +564,7 @@ function PracticeFeedback({ attemptId, next, again }: { attemptId: number; next:
   return (
     <>
       {error && <Notice kind="error">{error}</Notice>}
-      {!report && !error && <p role="status">{roundStrings.review.loading}</p>}
+      {!report && !error && <Loading>{roundStrings.review.loading}</Loading>}
       {report && <FeedbackView report={report} again={again} />}
       <ExamActions primary={next} />
     </>

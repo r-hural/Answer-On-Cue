@@ -79,6 +79,20 @@ def test_create_round_snapshot_and_first_attempt(client, world, db, settings):
     assert len({topics[i["question_version_id"]] for i in state["items"]}) == 3
 
 
+def test_upcoming_names_the_next_question(client, world, db):
+    from app.features.questions import service as questions
+
+    state = start(client, world, question_count=2)
+    second = state["items"][1]["question_version_id"]
+    text = questions.get_question(db, second, with_rubric=False).text
+    assert state["upcoming"] == [text]
+    skipped = ok(client, state["id"], "skip", "question")
+    assert skipped["upcoming"] == [text]  # feedback: the next question is still ahead
+    state = ok(client, state["id"], "next", skipped["phase"])
+    assert state["current_index"] == 1
+    assert state["upcoming"] == []
+
+
 def test_create_insufficient_409_with_available(client, world, db):
     athens = world["topics"][0]
     response = create(

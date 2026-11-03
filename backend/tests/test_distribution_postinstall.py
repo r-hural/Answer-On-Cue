@@ -217,3 +217,25 @@ def test_launcher_state_and_release_source_saved(root, tmp_path):
     assert seen["DisplayVersion"] == "0.1.1"
     status = json.loads((data / "update-status.json").read_text(encoding="utf-8"))
     assert status["ok"] is True and status["from_version"] == "0.1.0"
+
+
+def test_old_vc_runtime_is_a_warning_not_a_failure(root, capsys):
+    message = "Piper voices need a newer Microsoft Visual C++ Redistributable."
+    code = postinstall.main(
+        ["--version", "0.1.2"],
+        run=ok,
+        registry_writer=lambda key, values: None,
+        runtime_check=lambda: message,
+    )
+    assert code == 0
+    assert f"WARNING: {message}" in capsys.readouterr().out
+    status = json.loads((root / "data" / "update-status.json").read_text(encoding="utf-8"))
+    assert status["ok"] is True and status["message"] == message
+
+
+def test_vc_runtime_check_that_breaks_never_fails_install():
+    def boom():
+        raise OSError("no version.dll")
+
+    assert postinstall.vc_runtime_warning(boom) is None
+    assert postinstall.vc_runtime_warning(lambda: None) is None

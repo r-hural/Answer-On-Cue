@@ -11,7 +11,8 @@ in Polish, English, German, French, Spanish, Italian or Ukrainian, chosen per su
 enabled at first; turn on the others in Settings.
 
 - Windows 10 or 11 only. No administrator rights needed.
-- Runs on your computer and opens in your browser (`http://127.0.0.1`, local only).
+- Runs on your computer and opens in your browser at `http://answer-on-cue.localhost:8770`
+  (local only; nothing is added to the Windows hosts file).
 - Uses AI services with your own API keys (see below). An internet connection is needed for them.
 
 ## Install

@@ -19,9 +19,15 @@ FALLBACK_PORTS = range(8771, 8790)
 START_TIMEOUT = 90.0
 LOCK_MAX_AGE = 120.0
 TITLE = "AnswerOnCue"
+# The address the browser opens; the server and the probe stay on 127.0.0.1.
+APP_HOST = "answer-on-cue.localhost"
 NO_PORT_TEXT = "Ports 8770–8789 are in use by other programs. Close one of them and try again."
 
 Probe = Callable[[int], Literal["ours", "other", "free"]]
+
+
+def app_url(port: int) -> str:
+    return f"http://{APP_HOST}:{port}/"
 
 
 def start_failure_text(log_path: Path) -> str:
@@ -208,7 +214,7 @@ def main(
             return 1
 
     if not args.no_browser:
-        opener(f"http://127.0.0.1:{port}/")
+        opener(app_url(port))
     return 0
 
 

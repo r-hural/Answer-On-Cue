@@ -110,6 +110,16 @@ IID_SHELL_LINK_W = "{000214F9-0000-0000-C000-000000000046}"
 IID_PERSIST_FILE = "{0000010B-0000-0000-C000-000000000046}"
 
 
+def vc_runtime_warning(check: Callable[[], str | None] | None = None) -> str | None:
+    """Piper crashes the server with an old VC++ runtime; say so now, the app still installs."""
+    try:
+        if check is None:
+            from app.features.voice.vc_runtime import runtime_problem as check
+        return check()
+    except Exception:  # noqa: BLE001 - a failed check must never fail an install
+        return None
+
+
 def com_shortcut_writer(
     link: Path, target: str, arguments: str, workdir: Path, description: str
 ) -> None:
@@ -281,6 +291,7 @@ def main(
     run: Callable[..., object] = subprocess.run,
     registry_writer: Callable[[str, dict[str, str | int]], None] = winreg_writer,
     shortcut_writer: ShortcutWriter = com_shortcut_writer,
+    runtime_check: Callable[[], str | None] | None = None,
 ) -> int:
     parser = argparse.ArgumentParser(prog="distribution.postinstall")
     parser.add_argument("--root")
@@ -309,9 +320,11 @@ def main(
         print(f"POSTINSTALL FAILED: {exc}")
         return 2
 
-    warning = ensure_voice(backend_dir, env, data_dir, run)
-    if warning:
-        print(f"WARNING: {warning}")
+    warnings = [ensure_voice(backend_dir, env, data_dir, run), vc_runtime_warning(runtime_check)]
+    warning = " ".join(w for w in warnings if w) or None
+    for line in warnings:
+        if line:
+            print(f"WARNING: {line}")
     try:
         desktop = _folder(args.desktop, "AOC_DESKTOP_DIR", CSIDL_DESKTOPDIRECTORY)
         programs = _folder(args.programs, "AOC_PROGRAMS_DIR", CSIDL_PROGRAMS)

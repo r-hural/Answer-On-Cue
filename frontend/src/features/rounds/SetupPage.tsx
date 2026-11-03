@@ -9,6 +9,7 @@ import { browserLang, speakSample } from '../settings/browserVoice'
 import { type ContentLanguage, listLanguages } from '../library/api'
 import { fetchPreferences, fetchVoices, previewVoice, type Preferences, type VoiceInfo } from '../settings/api'
 import { createRound } from './api'
+import { prefetchRound } from './questionAudio'
 import { type RoundEstimate, fetchRoundEstimate } from '../costs/api'
 import { monthName, usd, usdRange } from '../costs/format'
 import { providerLabel } from '../costs/strings'
@@ -533,6 +534,7 @@ export function SetupPage() {
     setError(null)
     try {
       const created = await createRound(toRoundCreate(effective))
+      prefetchRound(created) // the first question's voice is made while the microphone is checked
       navigate(`/practice/${created.id}/microphone`)
     } catch (e) {
       const detail = e instanceof ApiError ? (e.detail as { available?: unknown; estimate?: unknown } | undefined) : undefined

@@ -10,6 +10,7 @@ import { getAttemptReport, getRoundReport, type AttemptReport } from './reports'
 import { roundTypeLabel } from './roundType'
 import { roundStrings } from './strings'
 import { uploadQueue, type UploadQueue } from './uploads'
+import { Loading } from '../../ui/Spinner'
 
 const t = roundStrings.review
 const exam = roundStrings.exam
@@ -160,7 +161,7 @@ function AnswerBody({
       </Notice>
     )
   }
-  if (!report) return <p role="status">{t.loading}</p>
+  if (!report) return <Loading>{t.loading}</Loading>
 
   const { result } = report
   const failure = result.failure

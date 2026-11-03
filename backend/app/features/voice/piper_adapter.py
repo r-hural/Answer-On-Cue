@@ -18,6 +18,7 @@ from app.features.providers.types import (
     VoiceSpec,
 )
 from app.features.voice.cache import wav_duration_ms
+from app.features.voice.vc_runtime import runtime_problem
 
 NOT_INSTALLED_MESSAGE = "The Piper voice is not installed. Run scripts/get-piper-voice.ps1."
 SYNTHESIS_FAILED_MESSAGE = "Could not generate speech with the Piper voice."
@@ -46,9 +47,17 @@ def _file_sha256(path: Path) -> str:
 
 
 class PiperSynthesizer:
-    def __init__(self, voices_dir: Path, *, loader: Callable[[Path], Any] | None = None) -> None:
+    def __init__(
+        self,
+        voices_dir: Path,
+        *,
+        loader: Callable[[Path], Any] | None = None,
+        runtime_check: Callable[[], str | None] | None = None,
+    ) -> None:
         self.voices_dir = voices_dir
         self._loader = loader or _default_loader
+        # Run before the first load: importing piper with an old VC++ runtime kills the process.
+        self._runtime_check = runtime_check
         self.package_version = _package_version()
         self._lock = threading.Lock()
         # Keyed by (path, mtime, size), so a re-downloaded model is loaded and hashed again.
@@ -81,6 +90,9 @@ class PiperSynthesizer:
 
     def _load(self, voice: str) -> Any:
         model_id = self._model_id(voice)
+        problem = (self._runtime_check or runtime_problem)()
+        if problem:
+            raise ProviderError("unavailable", "piper", problem)
         with self._lock:
             if model_id not in self._voices:
                 try:
